@@ -15,7 +15,7 @@ jobs:
       - name: Run Linter
         run: npm run lint
   test:
-    need: lint
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -29,7 +29,7 @@ jobs:
       - name: test
         run: npm test
   build:
-    need: test
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
