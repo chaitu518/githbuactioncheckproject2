@@ -1,0 +1,10 @@
+name: issuesEvent
+on: 
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled, assigned, unassigned]
+jobs:
+  issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check events
+        run: echo "issues ${{ toJSON(github.event)}}"
