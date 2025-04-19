@@ -4,7 +4,7 @@ on:
     types:
       - opened
   push:
-    branches:
+    branchs:
       - main
       - 'dev/**'
   workflow_dispatch:
