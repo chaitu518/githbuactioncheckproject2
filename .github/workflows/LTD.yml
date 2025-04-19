@@ -1,5 +1,10 @@
 name: LTD
-on: push
+on:
+  push:
+    branchs:
+      - main
+      - 'dev/**'
+  workflow-dispatch:
 jobs:
   lint:
     runs-on: ubuntu-latest
