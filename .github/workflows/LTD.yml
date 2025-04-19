@@ -1,7 +1,10 @@
 name: LTD
 on:
+  pull_request:
+    types:
+      - opened
   push:
-    branchs:
+    branches:
       - main
       - 'dev/**'
   workflow_dispatch:
