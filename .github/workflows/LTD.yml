@@ -1,5 +1,8 @@
 name: LTD
 on:
+  pull_request:
+    types:
+      - opened
   push:
     branchs:
       - main
