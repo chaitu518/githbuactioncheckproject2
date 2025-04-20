@@ -56,10 +56,10 @@ jobs:
         with:
           - name: dist-files
             path: dist
-    deploy:
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - name: deploy
-          run: echo "deploying.."
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: echo "deploying.."
       
