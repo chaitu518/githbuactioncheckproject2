@@ -4,9 +4,10 @@ on:
     types:
       - opened
   push:
-    branches:
+    branchs:
       - main
       - 'dev/**'
+      - 'feature/**'
   workflow_dispatch:
 jobs:
   lint:
@@ -50,6 +51,21 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-files
+      - name: show files
+        run: ls
       - name: deploy
-        run: echo "deploy.. ..."
+        run: echo "deploying.."
       
